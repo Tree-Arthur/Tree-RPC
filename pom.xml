@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>tree-rpc-easy</module>
+        <module>tree-rpc-core</module>
         <module>example-common</module>
         <module>example-consumer</module>
         <module>example-provider</module>

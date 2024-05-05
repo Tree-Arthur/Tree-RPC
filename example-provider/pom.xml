@@ -24,6 +24,11 @@
         </dependency>
         <dependency>
             <groupId>com.tree</groupId>
+            <artifactId>tree-rpc-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tree</groupId>
             <artifactId>example-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
