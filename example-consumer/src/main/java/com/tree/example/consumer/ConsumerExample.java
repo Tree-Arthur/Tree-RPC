@@ -16,7 +16,7 @@ import com.tree.rpc.utils.ConfigUtils;
 public class ConsumerExample {
     public static void main(String[] args) {
         // todo 需要获取 UserService 的实现类对象
-        RpcConfig rpcConfig = ConfigUtils.loadConfig(RpcConfig.class, "rpc","","yaml");
+        RpcConfig rpcConfig = ConfigUtils.loadConfig(RpcConfig.class, "rpc","","");
         System.out.println(rpcConfig);
 
         // 动态代理获取对象
@@ -29,5 +29,7 @@ public class ConsumerExample {
         }else{
             System.out.println("user == null");
         }
+        long number = userService.getNumber();
+        System.out.println(number);
     }
 }

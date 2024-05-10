@@ -30,4 +30,9 @@ public class RpcConfig {
      * 服务器端口
      */
     private int serverPort=8080;
+
+    /**
+     * 模拟调用
+     */
+    private boolean mock = false;
 }
