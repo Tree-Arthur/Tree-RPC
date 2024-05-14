@@ -1,0 +1,4 @@
+rpc.name=tree-rpc-yaml
+rpc.version=3.0
+rpc.serverPort=8083
+rpc.mock=true

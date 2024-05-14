@@ -1,0 +1,2 @@
+json=com.tree.rpc.serializer.JsonSerializer
+kryo=com.tree.rpc.serializer.KryoSerializer

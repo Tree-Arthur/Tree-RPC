@@ -2,14 +2,17 @@ package com.tree.rpc.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
+import com.tree.rpc.RpcApplication;
 import com.tree.rpc.model.RpcRequest;
 import com.tree.rpc.model.RpcResponse;
 import com.tree.rpc.serializer.JdkSerializer;
 import com.tree.rpc.serializer.Serializer;
+import com.tree.rpc.serializer.SerializerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.util.ServiceLoader;
 
 /**
  * @author : Tree Arthur
@@ -20,14 +23,21 @@ import java.lang.reflect.Method;
  */
 public class ServiceProxy implements InvocationHandler {
     /**
-     *
+     * 构造代理对象
      * @return
      * @throws Throwable
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //指定序列化器
-        Serializer serializer = new JdkSerializer();
+//      final Serializer serializer = new JdkSerializer();
+        //指定序列化器
+//        Serializer serializer = null;
+//        ServiceLoader<Serializer> serviceLoader = ServiceLoader.load(Serializer.class);
+//        for (Serializer service : serviceLoader) {
+//            serializer = service;
+//        }
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
         //构造请求
         RpcRequest rpcRequest = RpcRequest.builder()
                 .serviceName(method.getDeclaringClass().getName())
